@@ -1,5 +1,7 @@
 using  System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
+using CommandAPI.Models;
+using CommandAPI.Services;
 
 
 
@@ -10,10 +12,19 @@ namespace CommandAPI.Controllers
     [ApiController]
     public class CommandsController : ControllerBase
     {
-      [HttpGet]
-      public ActionResult<IEnumerable<string>> Get()
+      private readonly ICommandAPIService _commandAPIService;
+
+        public CommandsController (ICommandAPIService commandAPIService)
       {
-          return new string[]{"this", "is", "hard", "coded"};
+        _commandAPIService = commandAPIService;
+      }
+
+
+      [HttpGet]
+      public ActionResult<IEnumerable<Command>> GetAllCommands()
+      {
+          var allCommands = _commandAPIService.GetAllCommands();
+          return Ok (allCommands);
       }
      
     }

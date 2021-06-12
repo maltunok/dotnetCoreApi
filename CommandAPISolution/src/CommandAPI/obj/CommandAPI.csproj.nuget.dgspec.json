@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\dotnetCoreApi\\CommandApiSolution\\src\\CommandAPI\\CommandAPI.csproj": {}
+    "E:\\dotnetCoreApi\\CommandAPISolution\\src\\CommandAPI\\CommandAPI.csproj": {}
   },
   "projects": {
-    "E:\\dotnetCoreApi\\CommandApiSolution\\src\\CommandAPI\\CommandAPI.csproj": {
+    "E:\\dotnetCoreApi\\CommandAPISolution\\src\\CommandAPI\\CommandAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\dotnetCoreApi\\CommandApiSolution\\src\\CommandAPI\\CommandAPI.csproj",
+        "projectUniqueName": "E:\\dotnetCoreApi\\CommandAPISolution\\src\\CommandAPI\\CommandAPI.csproj",
         "projectName": "CommandAPI",
-        "projectPath": "E:\\dotnetCoreApi\\CommandApiSolution\\src\\CommandAPI\\CommandAPI.csproj",
+        "projectPath": "E:\\dotnetCoreApi\\CommandAPISolution\\src\\CommandAPI\\CommandAPI.csproj",
         "packagesPath": "C:\\Users\\m_alt\\.nuget\\packages\\",
-        "outputPath": "E:\\dotnetCoreApi\\CommandApiSolution\\src\\CommandAPI\\obj\\",
+        "outputPath": "E:\\dotnetCoreApi\\CommandAPISolution\\src\\CommandAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"

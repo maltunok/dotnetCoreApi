@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "x3NEjPKGfUjmlAFRAOlUraaQ6A3ldtZNMpKqoMknsx6SuU/l3LoILH+me8zdf36Tj7DutekvFBRsl/4C45BYig==",
+  "dgSpecHash": "2UActprOdKeG6p47sVGdLC/FmvM8HFAbu4c8n0kfIEJ2iOZd7FOq2e8nszNBS4MMbzyVvjYFZFyw7dslj0KBDQ==",
   "success": true,
-  "projectFilePath": "E:\\dotnetCoreApi\\CommandApiSolution\\src\\CommandAPI\\CommandAPI.csproj",
+  "projectFilePath": "E:\\dotnetCoreApi\\CommandAPISolution\\src\\CommandAPI\\CommandAPI.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
