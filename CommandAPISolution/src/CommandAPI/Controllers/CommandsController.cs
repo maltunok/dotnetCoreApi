@@ -26,6 +26,17 @@ namespace CommandAPI.Controllers
           var allCommands = _commandAPIService.GetAllCommands();
           return Ok (allCommands);
       }
+
+      [HttpGet("{id}")]
+      public ActionResult<Command> GetCommandById( int id)
+      {
+          var commandItem = _commandAPIService.GetCommandById(id);
+          if (commandItem==null)
+          {
+            return NotFound();
+          }
+          return Ok(commandItem);
+      }
      
     }
 }
