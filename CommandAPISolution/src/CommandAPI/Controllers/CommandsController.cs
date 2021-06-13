@@ -20,7 +20,7 @@ namespace CommandAPI.Controllers
       }
 
 
-      [HttpGet]
+      [HttpGet("commands")]
       public ActionResult<IEnumerable<Command>> GetAllCommands()
       {
           var allCommands = _commandAPIService.GetAllCommands();
