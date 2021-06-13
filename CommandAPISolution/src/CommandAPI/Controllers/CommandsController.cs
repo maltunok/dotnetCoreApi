@@ -20,11 +20,22 @@ namespace CommandAPI.Controllers
       }
 
 
-      [HttpGet]
+      [HttpGet("commands")]
       public ActionResult<IEnumerable<Command>> GetAllCommands()
       {
           var allCommands = _commandAPIService.GetAllCommands();
           return Ok (allCommands);
+      }
+
+      [HttpGet("commands/{id}")]
+      public ActionResult<Command> GetCommandById(int id)
+      {
+          var commandItem = _commandAPIService.GetCommandById(id);
+          if (commandItem==null)
+          {
+            return NotFound();
+          }
+          return Ok(commandItem);
       }
      
     }
