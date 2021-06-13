@@ -1,10 +1,18 @@
 using System.Collections.Generic;
+using CommandAPI.Database;
 using CommandAPI.Models;
+using CommandAPI.Services;
+using System.Linq;
 
 namespace CommandAPI.Services
 {
     public class CommandAPIService : ICommandAPIService
     {
+        private readonly CommandContext _context;
+        public CommandAPIService (CommandContext context)
+        {
+            _context = context;
+        }
         public void CreateCommand(Command cmd)
         {
             throw new System.NotImplementedException();
@@ -15,36 +23,19 @@ namespace CommandAPI.Services
             throw new System.NotImplementedException();
         }
 
-        public IEnumerable<Command> GetAllCommands()
+        public override bool Equals(object obj)
         {
-            var commands = new List<Command>
-            {
-                new Command{
-                    Id=0, HowTo="How to generate a migration", 
-                    CommandLine= "dotnet ef migrations add <name of migration>",
-                    Platform=".net core ef"
-                },
-                new Command{
-                    Id=1, HowTo="run migrations", 
-                    CommandLine= "dotnet ef database update",
-                    Platform=".net core ef"
-                },
-                  new Command{
-                    Id=2, HowTo="list migrations", 
-                    CommandLine= "dotnet ef migrations list",
-                    Platform=".net core ef"
-                },
-            };
-            return commands;
+            return obj is CommandAPIService service &&
+                   EqualityComparer<CommandContext>.Default.Equals(_context, service._context);
         }
 
+        public IEnumerable<Command> GetAllCommands()
+        {
+            return _context.CommandItems.ToList();
+        }
         public Command GetCommandById(int id)
         {
-            return new Command {
-                  Id=2, HowTo="list migrations", 
-                    CommandLine= "dotnet ef migrations list",
-                    Platform=".net core ef"
-            };
+            return _context.CommandItems.FirstOrDefault(p=>p.Id==id);
         }
 
         public bool SaveChanges()
@@ -53,6 +44,11 @@ namespace CommandAPI.Services
         }
 
         public void UpdateCommand(Command cmd)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public override int GetHashCode()
         {
             throw new System.NotImplementedException();
         }
